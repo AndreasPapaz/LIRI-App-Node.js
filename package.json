@@ -1,0 +1,29 @@
+{
+  "name": "liri-node-app",
+  "version": "1.0.0",
+  "description": "Language interpretation and recognition interface",
+  "main": "liri.js",
+  "dependencies": {
+    "request": "^2.69.0",
+    "spotify": "^0.3.0",
+    "twitter": "^1.2.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "type": "echo \"Error: no test specified\" && exit 1"
+  },
+  "respository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreasPapaz/LIRI-NODE-APP.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndreasPapaz/LIRI-NODE-APP/issues"
+  },
+  "homepage": "https://github.com/AndreasPapaz/LIRI-NODE-APP/#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreasPapaz/LIRI-NODE-APP.git"
+  }
+}

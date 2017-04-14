@@ -10,6 +10,7 @@ var arguments = process.argv.slice(2);
 var action = arguments[0];
 var data = arguments[1];
 
+/// i need to add a function for spotify.
 
 //===============================================================
 //function to append data to log.txt
@@ -56,6 +57,37 @@ function runLiri(action, data) {
 				else {
 					console.log("error: " + error);
 					append("error: " + error + '\n');
+				}
+			});
+		break;
+
+		case 'spotify-this-song':
+
+			spotify.search({type: 'track', query: data}, function(err, results) {
+
+				if (err) {
+					console.log('Error: ' + err);
+					append('Error: ' + err + '\n');
+					return;
+				}
+
+				if (results.tracks.items[0].artists[0].name) {
+					console.log("====================================");
+					console.log('Artists Name: ' + results.tracks.items[0].artists[0].name);
+					console.log('Song Name: ' + results.tracks.items[0].name);
+					console.log('URL: ' + results.tracks.items[0].artists[0].external_urls.spotify);
+					console.log('Album Name: ' + results.tracks.items[0].album.name);
+					console.log("====================================");
+					append("====================================\n");
+					append('Artists Name: ' + results.tracks.items[0].artists[0].name + '\n');
+					append('Song Name: ' + results.tracks.items[0].name + '\n');
+					append('URL: ' + results.tracks.items[0].artists[0].external_urls.spotify + '\n');
+					append('Album Name: ' + results.tracks.items[0].album.name + '\n');
+					append("====================================\n");
+				}
+				else {
+					console.log("NO RESULTS");
+					append("NO RESULTS\n");
 				}
 			});
 		break;
